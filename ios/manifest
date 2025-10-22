@@ -1,0 +1,19 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: arm64 x86_64
+mac: false
+description: ti.activitykit
+author: Mateus Ferraz
+license: Apache 2 
+copyright: Copyright (c) 2025 by Mateus Ferraz 
+
+# these should not be edited
+name: ti.activitykit
+moduleid: ti.activitykit
+guid: 51c2497a-0555-4408-9d90-e0532b2e8974
+platform: iphone
+minsdk: 13.0.0.GA

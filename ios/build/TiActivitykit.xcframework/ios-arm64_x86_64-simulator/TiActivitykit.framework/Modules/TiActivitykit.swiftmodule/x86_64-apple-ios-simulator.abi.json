@@ -1,0 +1,53 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TiActivitykit",
+    "printedName": "TiActivitykit",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TiActivitykit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TitaniumKit",
+        "printedName": "TitaniumKit",
+        "declKind": "Import",
+        "moduleName": "TiActivitykit"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "TiActivitykit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "TitaniumKit",
+        "printedName": "TitaniumKit",
+        "declKind": "Import",
+        "moduleName": "TiActivitykit"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/dev\/Documents\/ti.activity\/ti.activitykit\/ios\/Classes\/TiActivitykitModule.swift",
+      "kind": "StringLiteral",
+      "offset": 851,
+      "length": 13,
+      "value": "\"Hello World\""
+    }
+  ]
+}

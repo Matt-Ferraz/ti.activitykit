@@ -1,0 +1,11 @@
+framework module TiActivitykit {
+  umbrella header "TiActivitykit.h"
+  export *
+
+  module * { export * }
+}
+
+module TiActivitykit.Swift {
+  header "TiActivitykit-Swift.h"
+  requires objc
+}

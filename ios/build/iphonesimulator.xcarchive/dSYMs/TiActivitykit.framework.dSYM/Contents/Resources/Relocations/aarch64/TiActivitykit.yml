@@ -1,0 +1,38 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/dev/Library/Developer/Xcode/DerivedData/ti.activitykit-haetrrnkowcdvkbrpsptiuauogeq/Build/Intermediates.noindex/ArchiveIntermediates/TiActivitykit/InstallationBuildProductsLocation/Library/Frameworks/TiActivitykit.framework/TiActivitykit'
+relocations:
+  - { offset: 0x936E9, size: 0x8, addend: 0x0, symName: _TiActivitykitVersionString, symObjAddr: 0x0, symBinAddr: 0x3090, symSize: 0x0 }
+  - { offset: 0x9371E, size: 0x8, addend: 0x0, symName: _TiActivitykitVersionNumber, symObjAddr: 0x38, symBinAddr: 0x30C8, symSize: 0x0 }
+  - { offset: 0x9375B, size: 0x8, addend: 0x0, symName: '-[TiActivitykitModuleAssets moduleAsset]', symObjAddr: 0x0, symBinAddr: 0x1210, symSize: 0x8 }
+  - { offset: 0x9377A, size: 0x8, addend: 0x0, symName: '-[TiActivitykitModuleAssets moduleAsset]', symObjAddr: 0x0, symBinAddr: 0x1210, symSize: 0x8 }
+  - { offset: 0x937AD, size: 0x8, addend: 0x0, symName: '-[TiActivitykitModuleAssets resolveModuleAsset:]', symObjAddr: 0x8, symBinAddr: 0x1218, symSize: 0x8 }
+  - { offset: 0x93841, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyC5_init15withPageContextACXDSgSo0A9Evaluator_pSg_tFTo', symObjAddr: 0x0, symBinAddr: 0x1220, symSize: 0x7C }
+  - { offset: 0x939D4, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyCMa', symObjAddr: 0x454, symBinAddr: 0x1674, symSize: 0x20 }
+  - { offset: 0x939E8, size: 0x8, addend: 0x0, symName: ___swift_instantiateConcreteTypeFromMangledName, symObjAddr: 0x474, symBinAddr: 0x1694, symSize: 0x44 }
+  - { offset: 0x93B28, size: 0x8, addend: 0x0, symName: '_$sSD17dictionaryLiteralSDyxq_Gx_q_td_tcfCSS_SSTt0g5Tf4g_n', symObjAddr: 0x4B8, symBinAddr: 0x16D8, symSize: 0xFC }
+  - { offset: 0x93C98, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyC5_init15withPageContextACXDSgSo0A9Evaluator_pSg_tFTo', symObjAddr: 0x0, symBinAddr: 0x1220, symSize: 0x7C }
+  - { offset: 0x93D03, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyC10testNumber6unusedypypSg_tFTo', symObjAddr: 0x7C, symBinAddr: 0x129C, symSize: 0xD4 }
+  - { offset: 0x93D93, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyC10testString6unusedSSypSg_tFTo', symObjAddr: 0x150, symBinAddr: 0x1370, symSize: 0x98 }
+  - { offset: 0x93DE3, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyC14testDictionary6unusedSDyS2SGypSg_tFTo', symObjAddr: 0x1E8, symBinAddr: 0x1408, symSize: 0xE0 }
+  - { offset: 0x93EBB, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyC9testArray6unusedSaySSGypSg_tFTo', symObjAddr: 0x2C8, symBinAddr: 0x14E8, symSize: 0xA4 }
+  - { offset: 0x93F0D, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyC8testNull6unusedypSgAF_tFTo', symObjAddr: 0x36C, symBinAddr: 0x158C, symSize: 0x7C }
+  - { offset: 0x93F35, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyCACycfcTo', symObjAddr: 0x3E8, symBinAddr: 0x1608, symSize: 0x3C }
+  - { offset: 0x93F6A, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB12ExampleProxyCfD', symObjAddr: 0x424, symBinAddr: 0x1644, symSize: 0x30 }
+  - { offset: 0x9405C, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleC8moduleIdSSSgyFTo', symObjAddr: 0x0, symBinAddr: 0x1810, symSize: 0x34 }
+  - { offset: 0x941D1, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleCfETo', symObjAddr: 0x3A8, symBinAddr: 0x1BB8, symSize: 0x14 }
+  - { offset: 0x94200, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleCMa', symObjAddr: 0x3BC, symBinAddr: 0x1BCC, symSize: 0x20 }
+  - { offset: 0x9421F, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4findys10_HashTableV6BucketV6bucket_Sb5foundtxSHRzlFSS_Tg5', symObjAddr: 0x3DC, symBinAddr: 0x1BEC, symSize: 0x64 }
+  - { offset: 0x9426D, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4find_9hashValues10_HashTableV6BucketV6bucket_Sb5foundtx_SitSHRzlFSS_Tg5', symObjAddr: 0x440, symBinAddr: 0x1C50, symSize: 0xE0 }
+  - { offset: 0x94306, size: 0x8, addend: 0x0, symName: '_$sypWOc', symObjAddr: 0x634, symBinAddr: 0x1E44, symSize: 0x3C }
+  - { offset: 0x9431A, size: 0x8, addend: 0x0, symName: '_$sypSgWOh', symObjAddr: 0x6B4, symBinAddr: 0x1E80, symSize: 0x40 }
+  - { offset: 0x94444, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleC8moduleIdSSSgyFTo', symObjAddr: 0x0, symBinAddr: 0x1810, symSize: 0x34 }
+  - { offset: 0x94485, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleC7startupyyF', symObjAddr: 0x34, symBinAddr: 0x1844, symSize: 0x138 }
+  - { offset: 0x94574, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleC7startupyyFTo', symObjAddr: 0x16C, symBinAddr: 0x197C, symSize: 0x28 }
+  - { offset: 0x9458F, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleC7example9argumentsSSSgSayypGSg_tFTo', symObjAddr: 0x194, symBinAddr: 0x19A4, symSize: 0x9C }
+  - { offset: 0x945D7, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleC11examplePropSSvgTo', symObjAddr: 0x230, symBinAddr: 0x1A40, symSize: 0x34 }
+  - { offset: 0x94615, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleC11examplePropSSvsTo', symObjAddr: 0x264, symBinAddr: 0x1A74, symSize: 0xAC }
+  - { offset: 0x94656, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleCACycfcTo', symObjAddr: 0x310, symBinAddr: 0x1B20, symSize: 0x68 }
+  - { offset: 0x9468B, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleCfD', symObjAddr: 0x378, symBinAddr: 0x1B88, symSize: 0x30 }
+  - { offset: 0x946BB, size: 0x8, addend: 0x0, symName: '_$s13TiActivitykit0aB6ModuleC7example9argumentsSSSgSayypGSg_tFTf4nd_n', symObjAddr: 0x520, symBinAddr: 0x1D30, symSize: 0x114 }
+...
