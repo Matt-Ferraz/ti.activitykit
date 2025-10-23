@@ -2,32 +2,33 @@
 //  TiActivitykitModule.swift
 //  ti.activitykit
 //
-//  Created by Your Name
-//  Copyright (c) 2025 Your Company. All rights reserved.
-//
 
 import UIKit
 import TitaniumKit
+import ActivityKit
 
-/**
- 
- Titanium Swift Module Requirements
- ---
- 
- 1. Use the @objc annotation to expose your class to Objective-C (used by the Titanium core)
- 2. Use the @objc annotation to expose your method to Objective-C as well.
- 3. Method arguments always have the "[Any]" type, specifying a various number of arguments.
- Unwrap them like you would do in Swift, e.g. "guard let arguments = arguments, let message = arguments.first"
- 4. You can use any public Titanium API like before, e.g. TiUtils. Remember the type safety of Swift, like Int vs Int32
- and NSString vs. String.
- 
- */
+@available(iOS 16.1, *)
+public struct MyActivityAttributes: ActivityAttributes {
+  public struct ContentState: Codable, Hashable {
+    public var status: String
+    public var tempoEstimado: Date
+    
+    public init(status: String, tempoEstimado: Date) {
+      self.status = status
+      self.tempoEstimado = tempoEstimado
+    }
+  }
+  
+  public var nomeDoPedido: String
+  
+  public init(nomeDoPedido: String) {
+    self.nomeDoPedido = nomeDoPedido
+  }
+}
 
 @objc(TiActivitykitModule)
 class TiActivitykitModule: TiModule {
 
-  public let testProperty: String = "Hello World"
-  
   func moduleGUID() -> String {
     return "51c2497a-0555-4408-9d90-e0532b2e8974"
   }
@@ -41,25 +42,114 @@ class TiActivitykitModule: TiModule {
     debugPrint("[DEBUG] \(self) loaded")
   }
 
+  @objc(isSupported:)
+  func isSupported(arguments: Array<Any>?) -> Bool {
+    if #available(iOS 16.1, *) {
+      return ActivityAuthorizationInfo().areActivitiesEnabled
+    } else {
+      return false
+    }
+  }
+
+  @objc(startActivity:)
+  func startActivity(arguments: Array<Any>?) {
+    guard #available(iOS 16.1, *) else {
+      NSLog("[ERROR] Live Activities require iOS 16.1 or later")
+      return
+    }
+    
+    guard let arguments = arguments,
+          let params = arguments[0] as? [String: Any],
+          let nomeDoPedido = params["nomeDoPedido"] as? String else {
+      NSLog("[ERROR] Invalid arguments for startActivity. Expected: {nomeDoPedido: String}")
+      return
+    }
+    
+    let attributes = MyActivityAttributes(nomeDoPedido: nomeDoPedido)
+    let contentState = MyActivityAttributes.ContentState(
+      status: "Processando",
+      tempoEstimado: Date().addingTimeInterval(60 * 30)
+    )
+    
+    do {
+      let activity = try Activity.request(
+        attributes: attributes,
+        contentState: contentState
+      )
+      NSLog("[INFO] Activity started with ID: \(activity.id)")
+      self.fireEvent("activityStarted", with: ["id": activity.id])
+    } catch {
+      NSLog("[ERROR] Failed to start activity: \(error.localizedDescription)")
+      self.fireEvent("error", with: ["message": error.localizedDescription])
+    }
+  }
+  
+  @objc(updateActivity:)
+  func updateActivity(arguments: Array<Any>?) {
+    guard #available(iOS 16.1, *) else { return }
+    
+    guard let arguments = arguments,
+          let params = arguments[0] as? [String: Any],
+          let activityId = params["id"] as? String,
+          let status = params["status"] as? String else {
+      NSLog("[ERROR] Invalid arguments for updateActivity")
+      return
+    }
+    
+    Task {
+      for activity in Activity<MyActivityAttributes>.activities {
+        if activity.id == activityId {
+          let updatedState = MyActivityAttributes.ContentState(
+            status: status,
+            tempoEstimado: Date().addingTimeInterval(60 * 15)
+          )
+          
+          await activity.update(using: updatedState)
+          NSLog("[INFO] Activity \(activityId) updated with status: \(status)")
+          return
+        }
+      }
+      
+      NSLog("[ERROR] Activity with ID \(activityId) not found")
+    }
+  }
+  
+  @objc(endActivity:)
+  func endActivity(arguments: Array<Any>?) {
+    guard #available(iOS 16.1, *) else { return }
+    
+    guard let arguments = arguments,
+          let params = arguments[0] as? [String: Any],
+          let activityId = params["id"] as? String else {
+      NSLog("[ERROR] Invalid arguments for endActivity")
+      return
+    }
+    
+    Task {
+      for activity in Activity<MyActivityAttributes>.activities {
+        if activity.id == activityId {
+          await activity.end(dismissalPolicy: .immediate)
+          NSLog("[INFO] Activity \(activityId) ended")
+          return
+        }
+      }
+      
+      NSLog("[ERROR] Activity with ID \(activityId) not found")
+    }
+  }
+  
   @objc(example:)
   func example(arguments: Array<Any>?) -> String? {
     guard let arguments = arguments, let params = arguments[0] as? [String: Any] else { return nil }
-
-    // Example method. 
-    // Call with "MyModule.example({ hello: 'world' })"
-
     return params["hello"] as? String
   }
   
   @objc public var exampleProp: String {
      get { 
-        // Example property getter
         return "Titanium rocks!"
      }
      set {
-        // Example property setter
-        // Call with "MyModule.exampleProp = 'newValue'"
         self.replaceValue(newValue, forKey: "exampleProp", notification: false)
      }
-   }
+  }
 }

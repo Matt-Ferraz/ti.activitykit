@@ -26,3 +26,4 @@
 //
 // IMPORTANT NOTE: always use $(inherited) in your overrides
 // 
+IPHONEOS_DEPLOYMENT_TARGET = 16.1
